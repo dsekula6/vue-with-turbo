@@ -204,6 +204,20 @@
             "config/packages/property_info.yaml"
         ]
     },
+    "symfony/reprise": {
+        "version": "1.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.1",
+            "ref": "a452d21b563cd68e93020876bc542225eb9f9e20"
+        },
+        "files": [
+            "assets/app.js",
+            "assets/styles/app.css",
+            "config/packages/reprise.yaml"
+        ]
+    },
     "symfony/routing": {
         "version": "8.1",
         "recipe": {
@@ -281,6 +295,18 @@
         },
         "files": [
             "config/packages/ux_turbo.yaml"
+        ]
+    },
+    "symfony/ux-vue": {
+        "version": "3.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.4",
+            "ref": "ca9ba883ada9d18fa2e34576f1c6375bff609198"
+        },
+        "files": [
+            "assets/vue/controllers/Hello.vue"
         ]
     },
     "symfony/validator": {

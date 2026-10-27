@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Vue + Turbo playground{% endblock %}
+{% block body %}
+    <div class="shell">
+        <header>
+            <p class="eyebrow">Symfony UX / Vue / Turbo</p>
+            <h1>A little navigation experiment.</h1>
+            <p>Keep the navigation alive. Swap the page underneath.</p>
+        </header>
+        <div id="playground-navigation" data-turbo-permanent {{ vue_component('Navigation', {
+            links: [
+                { label: 'Counter', href: path('playground_counter') },
+                { label: 'Notes', href: path('playground_notes') },
+                { label: 'Colors', href: path('playground_colors') }
+            ]
+        }) }}></div>
+        <main>
+            <turbo-frame id="page-content" data-turbo-action="advance">
+                <div {{ vue_component(page) }}></div>
+            </turbo-frame>
+        </main>
+        <footer>Change the navigation counter or draft, then switch pages. Navigation state stays;
+            page state starts fresh. A full browser reload resets everything.</footer>
+    </div>
+{% endblock %}

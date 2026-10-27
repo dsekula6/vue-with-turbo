@@ -27,4 +27,12 @@ return [
     '@hotwired/stimulus' => ['version' => '3.2.2'],
     '@symfony/stimulus-bundle' => ['path' => './vendor/symfony/stimulus-bundle/assets/dist/loader.js'],
     '@hotwired/turbo' => ['version' => '8.0.23'],
+    'vue' => ['version' => '3.5.44', 'package_specifier' => 'vue/dist/vue.esm-bundler.js'],
+    '@vue/runtime-dom' => ['version' => '3.5.44'],
+    '@vue/compiler-dom' => ['version' => '3.5.44'],
+    '@vue/shared' => ['version' => '3.5.44'],
+    '@vue/runtime-core' => ['version' => '3.5.44'],
+    '@vue/compiler-core' => ['version' => '3.5.44'],
+    '@vue/reactivity' => ['version' => '3.5.44'],
+    '@symfony/ux-vue' => ['path' => './vendor/symfony/ux-vue/assets/dist/loader.js'],
 ];

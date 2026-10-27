@@ -18,3 +18,11 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+###> symfony/reprise ###
+/node_modules/
+/public/build/
+###< symfony/reprise ###
+
+/test-results/
+/playwright-report/
