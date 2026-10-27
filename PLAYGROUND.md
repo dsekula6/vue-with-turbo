@@ -15,13 +15,13 @@ resets all state.
 
 ## How it works
 
-Symfony routes render Twig with Symfony UX Vue's `vue_component()` helper.
+Each route has its own controller and Twig page. The page template directly names its Vue component with Symfony UX Vue's `vue_component()` helper. The shared shell and Turbo Frame live in `templates/base.html.twig`; navigation links live in a small Twig include.
 Vite/Reprise compiles the Vue single-file components and starts Stimulus and
 Turbo from `assets/controllers.json`. The template loads only the Vite entry,
 avoiding duplicate applications from loading an importmap entry as well.
 
 Navigation links target `turbo-frame#page-content`. Turbo fetches the destination
-HTML and extracts that frame, replacing only the page component. This is Turbo
+HTML and extracts that frame. Each destination template defines its own Vue component, so Symfony UX mounts Counter.vue, Notes.vue, or Colors.vue directly. This is Turbo
 Frame navigation with `data-turbo-action="advance"` for URL/history updates,
 rather than ordinary Turbo Drive full-body replacement. Responses contain the
 full page, so direct URLs and refresh work too.
@@ -31,8 +31,7 @@ The navigation sits outside the frame and has a stable ID and
 The standard UX Vue controller unmounts on Stimulus disconnect, including when
 Turbo temporarily detaches a permanent element. `assets/vue/PermanentVueController.js`
 extends that controller to retain its app during a Turbo render and reuse it on
-reconnection. Removed elements are still unmounted after rendering. Ordinary page
-components use the normal UX Vue lifecycle.
+reconnection. Removed elements are still unmounted after rendering. Each page component uses the normal UX Vue lifecycle.
 
 ## Verification
 

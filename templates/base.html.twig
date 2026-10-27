@@ -14,6 +14,20 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="shell">
+            <header>
+                <p class="eyebrow">Symfony UX / Vue / Turbo</p>
+                <h1>A little navigation experiment.</h1>
+                <p>Keep the navigation alive. Swap the page underneath.</p>
+            </header>
+            {% include 'playground/_navigation.html.twig' %}
+            <main>
+                <turbo-frame id="page-content" data-turbo-action="advance">
+                    {% block page_content %}{% endblock %}
+                </turbo-frame>
+            </main>
+            <footer>Change the navigation counter or draft, then switch pages. Navigation state stays;
+                page state starts fresh. A full browser reload resets everything.</footer>
+        </div>
     </body>
 </html>
