@@ -29,12 +29,17 @@
             }) }}></div>
 
             <main>
-                <turbo-frame id="page-content" data-turbo-action="advance">
+                <turbo-frame id="page-content" data-turbo-action="advance" data-transition-duration="200">
                     {% block page_content %}{% endblock %}
                 </turbo-frame>
             </main>
             <footer>Change the navigation counter or draft, then switch pages. Navigation state stays;
                 page state starts fresh. A full browser reload resets everything.</footer>
+        </div>
+        <div class="transition-curtain" data-transition-curtain aria-hidden="true">
+            <div class="transition-loader" role="status" aria-label="Loading page">
+                <span class="loader-circle" aria-hidden="true"></span>
+            </div>
         </div>
     </body>
 </html>
